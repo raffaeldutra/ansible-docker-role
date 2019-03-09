@@ -31,14 +31,13 @@ In you are using Vagrant, include remote_usere: vagrant.
 
 MIT / BSD
 
-Author Information
-------------------
+# Author Information
 
-Rafael Dutra <raffaeldutra@gmai.com>
-@raffaeldutra
-https://rafaeldutra.me
-https://hub.docker.com/u/raffaeldutra
-https://linkedin.com/in/rafaeldutra
-https://github.com/raffaeldutra
-https://gitlab.com/raffaeldutra
-https://speakerdeck.com/raffaeldutra
+* Rafael Dutra <raffaeldutra@gmai.com>
+* @raffaeldutra
+* https://rafaeldutra.me
+* https://hub.docker.com/u/raffaeldutra
+* https://linkedin.com/in/rafaeldutra
+* https://github.com/raffaeldutra
+* https://gitlab.com/raffaeldutra
+* https://speakerdeck.com/raffaeldutra
