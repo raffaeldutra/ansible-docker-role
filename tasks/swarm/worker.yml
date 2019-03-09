@@ -1,0 +1,12 @@
+---
+- name: Getting worker Swarm Token
+  shell: docker swarm join-token -q worker
+  delegate_to: leader
+  changed_when: False
+  register: worker_token
+
+- name: Adding machine to the cluster
+  shell: docker swarm join --token "{{ worker_token.stdout }}" {{ leaderIp }}
+  when:
+    - swarm_active.rc == 1
+    - "'worker' in inventory_hostname"

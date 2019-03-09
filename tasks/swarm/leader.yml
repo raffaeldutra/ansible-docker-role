@@ -1,0 +1,20 @@
+---
+- name: Checking Swarm is active
+  shell: 'docker info | grep "Swarm: active"'
+  register: swarm_active
+  ignore_errors: true
+  changed_when: False
+
+- name: Initializing Swarm only on leaders
+  when:
+    - swarm_active.rc == 1
+    - "'leader' in inventory_hostname"
+  shell: docker swarm init --advertise-addr {{ leaderIp }} --listen-addr {{ leaderIp }}
+
+- name: Getting manager Swarm Token
+  shell: docker swarm join-token -q manager
+  register: manager_token
+  changed_when: False
+  when:
+    - swarm_active.rc == 0
+    - "'leader' in inventory_hostname"

@@ -1,0 +1,12 @@
+---
+- include_tasks: install/debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Install Docker
+  package:
+    name: "docker-{{ docker_edition }}"
+    state: present
+  notify: restart docker
+
+- include_tasks: swarm/leader.yml
+- include_tasks: swarm/worker.yml
