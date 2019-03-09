@@ -1,20 +1,17 @@
+---
+dependencies: []
+
 galaxy_info:
   author: Rafael Dutra
-  description: Docker installation
-  company: Cloud Automation
-
+  description: Docker installation and Swarm configuration
+  company: "Cloud Automation"
   license: license (GPLv2, CC-BY, etc)
-
   min_ansible_version: 2.4
-
   platforms:
   - name: Ubuntu
     versions:
-    - 18.04
-    - 18.10
-
+    - bionic
+    - xenial
   galaxy_tags:
     - docker
     - swarm
-
-dependencies: []
