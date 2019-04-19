@@ -8,5 +8,7 @@
     state: present
   notify: restart docker
 
-- include_tasks: swarm/leader.yml
-- include_tasks: swarm/worker.yml
+- name: Initializing Swarm
+  include_tasks: swarm/leader.yml
+  include_tasks: swarm/worker.yml
+  when: swarm_mode is defined
